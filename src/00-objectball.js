@@ -132,32 +132,19 @@ function gameObject() {
 // }
 
 // Given a player's name, return the number of points scored by that player
-// function numPointsScored(playerInput) {
-//     let game = gameObject()
-//     for (let gameKey in game) { // iterate through game keys (home, away)
-//         let teamObj = game[gameKey]
-//         for (let teamKey in teamObj) { // iterate through team keys (teamName, colors, players)
-//             let playerObj = teamObj.players
-//             for (let playerKey in playerObj) { // iterate through players
-//                 if (playerKey === playerInput) { // check to see if player matches function argument
-//                     return playerObj[playerKey].points // return the player's points
-//                 }
-//             }
-//         }
-//     }
-// }
-
-function numPointsScored (playerInput) {
-    let game = gameObject(); // <== turn function into variable to iterate through
-    for (let gameKey in game) {  // iterates through all keys in "game"
+function numPointsScored(playerInput) {
+    let game = gameObject()
+    for (let gameKey in game) { // iterate through game keys (home, away)
         let teamObj = game[gameKey]
-        for (let teamKey in teamObj) {
-            let 
-            
-    //    }
+        for (let teamKey in teamObj) { // iterate through team keys (teamName, colors, players)
+            let playerObj = teamKey.players
+            for (let playerKey in playerObj) { // iterate through players
+                if (playerKey === playerInput) { // check to see if player matches function argument
+                    return playerObj[playerKey].points // return the player's points
+                }
+            }
+        }
     }
-        // console.log("In this game, we have" game[gameKey])        
 }
 
 
-numPointsScored()
